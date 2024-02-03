@@ -64,8 +64,11 @@ def main(log, path_main, path_recipe_bom, path_recipe_swr, path_swr):
     log.debug(f"\n{df_input.head(5).to_string(index=False)}")
 
     log.debug('Dropping null rows...')
-    df_input.dropna(subset=['CBID', 'PNP_PROGRAM_SIDE1', 'PNP_PROGRAM_SIDE2', 'PART NUMBER (IS)', 'PART NUMBER (WAS)', 'DESIGNATOR'], inplace=True)
+    df_input.dropna(how='any', subset=['CBID', 'PNP_PROGRAM_SIDE1', 'PART NUMBER (IS)', 'PART NUMBER (WAS)', 'DESIGNATOR'], inplace=True)
     log.debug(f"\n{df_input.head(5).to_string(index=False)}")
+
+    if len(df_input) < 1:
+        raise ConnectionAbortedError ('There is no input to be processed, force exiting application...')
 
     log.debug('Converting all input columns to str...')
     df_input = df_input[input_columns].astype(str)
@@ -513,6 +516,12 @@ if __name__ == '__main__':
     try:
         log, path_main, path_recipe_bom, path_recipe_swr, path_swr = init()
         main(log, path_main, path_recipe_bom, path_recipe_swr, path_swr)
+
+    except ConnectionAbortedError as e:
+        log.error(f"{str(e)}")
+        time.sleep(5)
+        sys.exit(0)
+
     except Exception as e:
         log.critical('Force exiting application...')
         log.exception(f"Unexpected Error: {str(e)}")
