@@ -1,0 +1,85 @@
+<PlacementProgram xmlns="http://api.assembleon.com/pp7/v1">
+	<General syntaxVersion="1.1" lastModified="2022-11-28T00:16:06Z" positionInLine="1" dualLaneMode="SINGLE" fiducialSharing="LOCAL" transportDirection="LEFT_TO_RIGHT" cycleTime="3567">
+		<Setting key="optimizerVersion" value="Version: 8.245.4, date: 2021-09-23 08:53:14, COMBINED: Enabled, TALON: Enabled, EXPENSIVE_ASSERTS: Disabled"/>
+		<Setting key="feederDuplication" value="STANDARD"/>
+		<Setting key="preferTTF" value="false"/>
+		<Setting key="equippedWithXTHeads" value="false"/>
+		<Setting key="supportsLongBoards" value="false"/>
+		<Setting key="enableNeighborhoodRestrictions" value="true"/>
+		<Setting key="boardAccuracyClass" value="STANDARD"/>
+		<Setting key="transportConfiguration" value="SINGLE"/>
+		<Setting key="performPrePick" value="true"/>
+	</General>
+	<Board id="3440CB-PD9-M5-IT" length="269.737" width="220.917" thickness="1.250" cadOriginX="0.000" cadOriginY="0.000" cadOriginRz="0.0" handlingClass="HIGH" maxComponentHeightProducingSide="3.8" maxComponentHeightNonProducingSide="20.000">
+		<Badmark type="CIRCUIT" modelId="r1574.8" refDes="B0" circuitNumber="1" x="-185.138" y="107.459" rz="0.0"/>
+		<Badmark type="CIRCUIT" modelId="r1574.8" refDes="B1" circuitNumber="2" x="-48.998" y="107.459" rz="0.0"/>
+		<Badmark type="CIRCUIT" modelId="r1574.8" refDes="B2" circuitNumber="3" x="-185.138" y="212.259" rz="0.0"/>
+		<Badmark type="CIRCUIT" modelId="r1574.8" refDes="B3" circuitNumber="4" x="-48.998" y="212.259" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F0_0" circuitNumber="1" x="-256.838" y="53.959" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F0_1" circuitNumber="1" x="-151.838" y="19.359" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F0_2" circuitNumber="1" x="-262.058" y="92.659" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F0_3" circuitNumber="1" x="-238.038" y="60.859" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F0_4" circuitNumber="1" x="-195.188" y="102.659" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F0_5" circuitNumber="1" x="-220.238" y="19.409" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F0_6" circuitNumber="1" x="-167.638" y="107.459" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F1_0" circuitNumber="2" x="-120.698" y="53.959" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F1_1" circuitNumber="2" x="-15.698" y="19.359" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F1_2" circuitNumber="2" x="-125.918" y="92.659" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F1_3" circuitNumber="2" x="-101.898" y="60.859" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F1_4" circuitNumber="2" x="-59.048" y="102.659" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F1_5" circuitNumber="2" x="-84.098" y="19.409" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F1_6" circuitNumber="2" x="-31.498" y="107.459" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F2_0" circuitNumber="3" x="-256.838" y="158.759" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F2_1" circuitNumber="3" x="-151.838" y="124.159" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F2_2" circuitNumber="3" x="-262.058" y="197.459" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F2_3" circuitNumber="3" x="-238.038" y="165.659" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F2_4" circuitNumber="3" x="-195.188" y="207.459" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F2_5" circuitNumber="3" x="-220.238" y="124.209" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F2_6" circuitNumber="3" x="-167.638" y="212.259" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F3_0" circuitNumber="4" x="-120.698" y="158.759" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F3_1" circuitNumber="4" x="-15.698" y="124.159" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F3_2" circuitNumber="4" x="-125.918" y="197.459" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F3_3" circuitNumber="4" x="-101.898" y="165.659" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F3_4" circuitNumber="4" x="-59.048" y="207.459" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F3_5" circuitNumber="4" x="-84.098" y="124.209" rz="0.0"/>
+		<Fiducial type="BOARD" modelId="r1016" refDes="F3_6" circuitNumber="4" x="-31.498" y="212.259" rz="0.0"/>
+		<Circuit number="1" type="3440CB-PD9-M5(C)" sizeX="133.600" sizeY="95.800" x="-269.738" y="10.159" rz="0.0"/>
+		<Circuit number="2" type="3440CB-PD9-M5(C)" sizeX="133.600" sizeY="95.800" x="-133.598" y="10.159" rz="0.0"/>
+		<Circuit number="3" type="3440CB-PD9-M5(C)" sizeX="133.600" sizeY="95.800" x="-269.738" y="114.959" rz="0.0"/>
+		<Circuit number="4" type="3440CB-PD9-M5(C)" sizeX="133.600" sizeY="95.800" x="-133.598" y="114.959" rz="0.0"/>
+	</Board>
+	<BoardAllocation>
+		<TransportLane number="1" boardId="3440CB-PD9-M5-IT"/>
+	</BoardAllocation>
+	<Segment number="1" type="H1">
+		<Setup>
+			<FeedSection number="1" type="A_Series_Tray_Trolley">
+				<Feeder slotNumber="1" cacheSlotNumber="101" type="A_Series_Tray_Pallet">
+					<FeederLane number="1" partNumber="529-500168" shapeId="BGA1285_2705SQR_P65_80H200" trayId="T.4.10.33.31" x="11.400" y="-18.750" rz="270.0"/>
+				</Feeder>
+				<Feeder slotNumber="2" cacheSlotNumber="101" type="A_Series_Tray_Pallet">
+					<FeederLane number="1" partNumber="529-500168" shapeId="BGA1285_2705SQR_P65_80H200" trayId="T.4.10.33.31" x="11.400" y="-18.750" rz="270.0"/>
+				</Feeder>
+			</FeedSection>
+			<FeedSection number="2" type="FDR_TROLLEY_43"/>
+			<FeedSection number="4" type="iFlex_Feeder_Bank_H1">
+				<Feeder slotNumber="2" type="iFeeder_56">
+					<FeederLane number="1" partNumber="531-500480" shapeId="SAS_PCIE_RA_AMP_OBLONG_PLG"/>
+				</Feeder>
+				<Feeder slotNumber="10" type="iFeeder_04"/>
+				<Feeder slotNumber="11" type="iFeeder_04"/>
+			</FeedSection>
+			<Robot number="1">
+				<PlacementHead number="1" type="PH5"/>
+				<PlacementHead number="2" type="PH5"/>
+				<Camera number="1" type="BA"/>
+			</Robot>
+			<TEU number="1" type="PH5_TEU"/>
+			<Camera number="1" type="CV_LFOV"/>
+			<Camera number="2" type="CV_LFOV"/>
+		</Setup>
+		<Processing>
+			<BoardLocation number="1" stopperPosition="160.000" stopperAlignment="LEADING_EDGE"/>
+		</Processing>
+	</Segment>
+</PlacementProgram>
