@@ -1,7 +1,5 @@
 # SWR_PROGRAM_CREATE
 To automate SWR program creation, generated based on bom programs. Developed by [jiajunlee](https://github.com/jiajunlee19).
-- The current [swr-program-create](https://github.com/jiajunlee19/swr-program-create) project is for python-developer only. If you wish to continue, installation are provided in below section.
-- For non-python user, please navigate to the alternative [swr-program-create-app](https://github.com/jiajunlee19/swr-program-create-app) solution.
 
 <br>
 
@@ -15,22 +13,15 @@ There are generally 3 types of SWR, see limitations in below section.
 <br>
 
 ### Installation
-- Fork this project [here](https://github.com/jiajunlee19/swr-program-create/fork)
+- Fork this project [here](https://github.com/jiajunlee19/swr-program-create-app/fork)
 <br><br>
     OR
 <br><br> 
-- Clone this project by `git clone "https://github.com/jiajunlee19/swr-program-create.git"`
+- Clone this project by `git clone "https://github.com/jiajunlee19/swr-program-create-app.git"`
 <br><br>
     OR
 <br><br> 
-- Download this project in zip [here](https://github.com/jiajunlee19/swr-program-create/archive/refs/heads/master.zip) and extract
-
-<br><br> 
-- Note that Python is required to run, below step will help to install the required modules:
-    1. Install Python, if you have not install it yet
-    2. Launch `cmd` (command prompt), run `cd "C:\Downloads\swr-program-create"`, replace with whichever path the project is installed on
-        - Run `pip install --upgrade -r requirements.txt`
-        - Run `set Path=%Path%,%python -m site --user-base%`
+- Download this project in zip [here](https://github.com/jiajunlee19/swr-program-create-app/archive/refs/heads/master.zip) and extract
 
 <br>
 
@@ -38,7 +29,7 @@ There are generally 3 types of SWR, see limitations in below section.
 0. (Optional) Go to `settings` sheet in [BOM.xlsx](BOM.xlsx), modify the settings if needed.
 1. Go to `SWR` sheet in [SWR.xlsx](SWR.xlsx), fill in all SWR requirements accordingly.
 2. Place all relevant bom recipes in [recipe-bom](recipe-bom/) folder.
-3. Run [main.py](main.py).
+3. Run [main.exe](main.exe).
 4. Created SWR recipes can be found in [recipe-swr](recipe-swr/) folder within subfolder grouped by `CBID`.
 5. (Optional): View the logs in [Log/SWR_PROGRAM_CREATE.log](Log/SWR_PROGRAM_CREATE.log).
 
@@ -56,11 +47,11 @@ Below are the passing test cases, using master bom recipes in [recipe-bom/590-12
 
 | SWR Requirements                     | Generated SWR recipes                                                          |
 | :---                                 | :-------------------------                                                     |
-| [123456-ExtraPlace](SWR.xlsx)        | No SWR recipes generated as per limitation `#1`                                |
-| [123457-NoPlace-ALL](SWR.xlsx)       | [All imapcted parts and feeders are removed](recipe-swr/123457-NoPlace-ALL/)   |
-| [123458-NoPlace-Partial](SWR.xlsx)   | [All impacted parts are removed, keeping feeders for non-impacted designators ](recipe-swr/123458-NoPlace-Partial/) |
-| [123459-PartSub-ALL](SWR.xlsx)       | [All impated parts and feeders are subbed](recipe-swr/123459-PartSub-ALL/)     |
-| [123460-PartSub-Partial](SWR.xlsx)   | No SWR recipes generated as per limitation `#2`                                |
+| [123456-EXTRAPLACE](SWR.xlsx)        | No SWR recipes generated as per limitation `#1`                                |
+| [123457-NOPLACE-ALL](SWR.xlsx)       | [All imapcted parts and feeders are removed](recipe-swr/123457-NOPLACE-ALL/)   |
+| [123458-NOPLACE-Partial](SWR.xlsx)   | [All impacted parts are removed, keeping feeders for non-impacted designators ](recipe-swr/123458-NOPLACE-PARTIAL/) |
+| [123459-PARTSUB-ALL](SWR.xlsx)       | [All impated parts and feeders are subbed](recipe-swr/123459-PARTSUB-ALL/)     |
+| [123460-PARTSUB-PARTIAL](SWR.xlsx)   | No SWR recipes generated as per limitation `#2`                                |
 
 <br>
 
