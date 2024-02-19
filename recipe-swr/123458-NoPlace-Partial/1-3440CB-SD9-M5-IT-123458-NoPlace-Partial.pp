@@ -54,7 +54,7 @@
 		<ns0:Setting key="maxComponentsPerCircuitForMinimizingAlignmentMatrices" value="40" />
 		<ns0:Setting key="alternateFeedingStrategy" value="disallowAlternateOnSameFeeder" />
 	</ns0:General>
-	<ns0:Board id="3440CB-SD9-M5-IT-123458-NoPlace-Partial" length="269.737" width="220.917" thickness="1.250" cadOriginX="0.000" cadOriginY="0.000" handlingClass="HIGH" maxComponentHeightNonProducingSide="20.000">
+	<ns0:Board id="3440CB-SD9-M5-IT-123458-NOPLACE-PARTIAL" length="269.737" width="220.917" thickness="1.250" cadOriginX="0.000" cadOriginY="0.000" handlingClass="HIGH" maxComponentHeightNonProducingSide="20.000">
 		<ns0:Badmark modelId="r1574.8" x="-185.138" y="113.459" z="0.000" rz="0.00" refDes="B0" circuitNumber="1" />
 		<ns0:Badmark modelId="r1574.8" x="-48.998" y="113.459" z="0.000" rz="0.00" refDes="B1" circuitNumber="2" />
 		<ns0:Badmark modelId="r1574.8" x="-185.138" y="8.659" z="0.000" rz="0.00" refDes="B2" circuitNumber="3" />

@@ -10,7 +10,7 @@
 		<ns0:Setting key="transportConfiguration" value="SINGLE" />
 		<ns0:Setting key="performPrePick" value="true" />
 	</ns0:General>
-	<ns0:Board id="3440CB-SD9-M5-IT-123457-NoPlace-ALL" length="269.737" width="220.917" thickness="1.250" cadOriginX="0.000" cadOriginY="0.000" cadOriginRz="0.0" handlingClass="HIGH" maxComponentHeightProducingSide="2.3" maxComponentHeightNonProducingSide="20.000">
+	<ns0:Board id="3440CB-SD9-M5-IT-123457-NOPLACE-ALL" length="269.737" width="220.917" thickness="1.250" cadOriginX="0.000" cadOriginY="0.000" cadOriginRz="0.0" handlingClass="HIGH" maxComponentHeightProducingSide="2.3" maxComponentHeightNonProducingSide="20.000">
 		<ns0:Badmark type="CIRCUIT" modelId="r1574.8" refDes="B0" circuitNumber="1" x="-185.138" y="113.459" rz="0.0" />
 		<ns0:Badmark type="CIRCUIT" modelId="r1574.8" refDes="B1" circuitNumber="2" x="-48.998" y="113.459" rz="0.0" />
 		<ns0:Badmark type="CIRCUIT" modelId="r1574.8" refDes="B2" circuitNumber="3" x="-185.138" y="8.659" rz="0.0" />
