@@ -4,6 +4,7 @@ try:
     import sys
     import getpass
     import pandas as pd
+    import numpy as np
     import xml.etree.ElementTree as ETree
     from utils.logger import logger_init
     from utils.Common_Functions_64 import ExpandSeries, delete_file
@@ -63,29 +64,19 @@ def main(log, path_main, path_recipe_bom, path_recipe_swr, path_swr):
     df_input = pd.read_excel(path_swr, sheet_name='SWR')
     log.debug(f"\n{df_input.head(5).to_string(index=False)}")
 
+    log.debug('Trimming all input columns...')
+    for input_column in input_columns:
+        df_input[input_column] = df_input[input_column].astype(str)
+        df_input[input_column] = df_input[input_column].str.strip().str.upper().str.lstrip('0')
+    df_input = df_input.replace([' '], ['']).replace(['NAN'], ['']).replace([''], [np.NaN], regex=True)
+    log.debug(f"\n{df_input.head(5).to_string(index=False)}")
+
     log.debug('Dropping null rows...')
     df_input.dropna(how='any', subset=['CBID', 'PNP_PROGRAM_SIDE1', 'PART NUMBER (IS)', 'PART NUMBER (WAS)', 'DESIGNATOR'], inplace=True)
     log.debug(f"\n{df_input.head(5).to_string(index=False)}")
 
     if len(df_input) < 1:
         raise ConnectionAbortedError ('There is no input to be processed, force exiting application...')
-
-    log.debug('Converting all input columns to str...')
-    df_input = df_input[input_columns].astype(str)
-    log.debug(f"\n{df_input.head(5).to_string(index=False)}")
-
-    log.debug('Trimming all input columns...')
-    df_input['CBID'] = df_input['CBID'].str.strip()
-    df_input['PNP_PROGRAM_SIDE1'] = df_input['PNP_PROGRAM_SIDE1'].str.strip().str.upper()
-    df_input['PNP_PROGRAM_SIDE2'] = df_input['PNP_PROGRAM_SIDE2'].str.strip().str.upper()
-    df_input['PART NUMBER (IS)'] = df_input['PART NUMBER (IS)'].str.strip().str.upper()
-    df_input['PART NUMBER (WAS)'] = df_input['PART NUMBER (WAS)'].str.strip().str.upper()
-    df_input['DESIGNATOR'] = df_input['DESIGNATOR'].str.strip().str.upper()
-    log.debug(f"\n{df_input.head(5).to_string(index=False)}")
-
-    log.debug('Extracting first part from dot-delimited number-like CBID column...')
-    df_input['CBID'] = df_input['CBID'].str.split('.').str[0]
-    log.debug(f"\n{df_input.head(5).to_string(index=False)}")
 
     log.debug('Dropping CBID duplicates...')
     df_input.drop_duplicates(subset=['CBID'], keep='first', inplace=True)
