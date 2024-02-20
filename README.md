@@ -1,5 +1,7 @@
 # SWR_PROGRAM_CREATE
 To automate SWR program creation, generated based on bom programs. Developed by [jiajunlee](https://github.com/jiajunlee19).
+- The current [swr-program-create](https://github.com/jiajunlee19/swr-program-create) project is for python-developer only. If you wish to continue, installation are provided in below section.
+- For non-python user, please navigate to the alternative [swr-program-create-app](https://github.com/jiajunlee19/swr-program-create-app) solution.
 
 <br>
 
@@ -13,23 +15,23 @@ There are generally 3 types of SWR, see limitations in below section.
 <br>
 
 ### Installation
-- Fork this project [here](https://github.com/jiajunlee19/swr-program-create-app/fork)
+- Fork this project [here](https://github.com/jiajunlee19/swr-program-create/fork)
 <br><br>
     OR
 <br><br> 
-- Clone this project by `git clone "https://github.com/jiajunlee19/swr-program-create-app.git"`
+- Clone this project by `git clone "https://github.com/jiajunlee19/swr-program-create.git"`
 <br><br>
     OR
 <br><br> 
-- Download this project in zip [here](https://github.com/jiajunlee19/swr-program-create-app/archive/refs/heads/master.zip) and extract
+- Download this project in zip [here](https://github.com/jiajunlee19/swr-program-create/archive/refs/heads/master.zip) and extract
 
 <br>
 
 ### How to run?
-0. (Optional) Go to `settings` sheet in [BOM.xlsx](BOM.xlsx), modify the settings if needed.
+0. (Optional) Go to `settings` sheet in [SWR.xlsx](SWR.xlsx), modify the settings if needed.
 1. Go to `SWR` sheet in [SWR.xlsx](SWR.xlsx), fill in all SWR requirements accordingly.
 2. Place all relevant bom recipes in [recipe-bom](recipe-bom/) folder.
-3. Run [main.exe](main.exe).
+3. Run [main.py](main.py).
 4. Created SWR recipes can be found in [recipe-swr](recipe-swr/) folder within subfolder grouped by `CBID`.
 5. (Optional): View the logs in [Log/SWR_PROGRAM_CREATE.log](Log/SWR_PROGRAM_CREATE.log).
 
