@@ -90,7 +90,10 @@ def main(log, path_main, path_recipe_bom, path_recipe_swr, path_swr):
             log.info(f"Reading row #{i+1} with CBID = {df_input.loc[i, 'CBID']}, PNP_PROGRAM_SIDE1 = {df_input.loc[i, 'PNP_PROGRAM_SIDE1']}, PNP_PROGRAM_SIDE2 = {df_input.loc[i, 'PNP_PROGRAM_SIDE2']}")
             log.debug(f"\n{df_input.take([i]).to_string(index=False)}")
 
-            selected_program = [df_input.loc[i, 'PNP_PROGRAM_SIDE1'], df_input.loc[i, 'PNP_PROGRAM_SIDE2']]
+            try:
+                selected_program = [df_input.loc[i, 'PNP_PROGRAM_SIDE1'], df_input.loc[i, 'PNP_PROGRAM_SIDE2']].remove('')
+            except (KeyError, ValueError):
+                selected_program = [df_input.loc[i, 'PNP_PROGRAM_SIDE1'], df_input.loc[i, 'PNP_PROGRAM_SIDE2']]
 
             # log.debug('Hardcoding selected files...')
             # selected_program = ['3440CB-PD0-M5-IT', '3440CB-SD0-M5-IT']
