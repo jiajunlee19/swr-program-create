@@ -518,13 +518,12 @@ def main(log, path_main, path_recipe_bom, path_recipe_swr, path_swr):
                     old_filename_list = [partWas + '.PRT' for partWas in partWasList]
                     new_filename_list = [partIs + '.PRT' for partIs in partIsList]
                     data_dict = {}
-                    pp7_in_zip = set()
                     with zipfile.ZipFile(file, mode='r') as zin:
                         with zipfile.ZipFile('tmp.zip', mode='w', compression=zipfile.ZIP_DEFLATED) as zout:
                             zout.comment = zin.comment # preserve the comment
                             for item in zin.infolist():
                                 if item.filename[-4:].lower() == '.pp7':
-                                    pp7_in_zip.add(item.filename)
+                                    pass
                                 elif item.filename not in old_filename_list:
                                     # write the unchanged file
                                     zout.writestr(item, zin.read(item.filename))
@@ -545,8 +544,10 @@ def main(log, path_main, path_recipe_bom, path_recipe_swr, path_swr):
                     with zipfile.ZipFile(output_path, mode='a', compression=zipfile.ZIP_DEFLATED) as zf:
                         for f, d in data_dict.items():
                             zf.writestr(f, d)
-                        for pp7 in pp7_in_zip:
+                        try:
                             zf.write(output_path.replace('.zip', ''), output_path.replace('.zip', '').rsplit('\\', 1)[-1])
+                        except FileNotFoundError:
+                            raise AssertionError ('.pp7.zip files are provided, but .pp7 files are missing. Do extract and provide .pp7 together with .pp7.zip files.')
                         zf.close()
 
         except AssertionError as e:
