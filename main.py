@@ -506,13 +506,36 @@ def main(log, path_main, path_recipe_bom, path_recipe_swr, path_swr):
                 output_path = f"{output_folder}\\{filename_without_ext}-{df_input.loc[i, 'CBID']}.{file_ext}"
                 log.info(f"Writing into {output_path}...")
 
-                # Write output .pp and .pp7 files
-                if file_ext.lower() == 'pp' or file_ext.lower() == 'pp7':
+                # Write output .pp
+                if file_ext.lower() == 'pp':
                     log.info('Writing output .pp and .pp7 files...')
                     with open(f"{output_path}", 'wb') as f:
                         prstree.write(f, method='xml', xml_declaration=True, encoding='utf-8')
+                        f.close()
 
-                # Write pp7.zip
+                    with open(f"{output_path}", 'r') as f:
+                        data = f.read().replace(' />', '/>').replace('''<?xml version='1.0' encoding='utf-8'?>''', '''<?xml version="1.0"?>''').replace('''<Model>\n				<General>''', '''<Model xmlns="" xmlns:ns2="http://api.assembleon.com/pp/v2">\n				<General>''').replace('''</PlacementProgram>''', '''</PlacementProgram>\n''')
+                        f.close()
+                        
+                    with open(f"{output_path}", 'w') as f:
+                        f.write(data)
+                        f.close()
+                
+                # Write output .pp7
+                if file_ext.lower() == 'pp7':
+                    with open(f"{output_path}", 'wb') as f:
+                        prstree.write(f, method='xml', xml_declaration=False)
+                        f.close()
+
+                    with open(f"{output_path}", 'r') as f:
+                        data = f.read().replace(' />', '/>').replace('''</PlacementProgram>''', '''</PlacementProgram>\n''')
+                        f.close()
+                        
+                    with open(f"{output_path}", 'w') as f:
+                        f.write(data)
+                        f.close()
+
+                # Write output .pp7.zip
                 if file_ext.lower() == 'pp7.zip' and zipfile.is_zipfile(file):
                     log.info('Writing output .pp7.zip files...')
                     old_filename_list = [partWas + '.PRT' for partWas in partWasList]
